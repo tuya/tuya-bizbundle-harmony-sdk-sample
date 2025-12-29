@@ -1,0 +1,164 @@
+{
+  "routerMap": [
+    {
+      "name": "ActiveDataPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRActiveDataPage.ets",
+      "buildFunction": "entryActiveDataPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "APModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRAPModePage.ets",
+      "buildFunction": "entryAPModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "BLEModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRBLEModePage.ets",
+      "buildFunction": "entryBLEModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "BLEWiFiModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRBLEWiFiModePage.ets",
+      "buildFunction": "entryBLEWiFiModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "EZModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZREZModePage.ets",
+      "buildFunction": "entryEZModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "MQTTDirectlyPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRMQTTDirectlyPage.ets",
+      "buildFunction": "entryMQTTDirectlyPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "NetworkConfigurationListPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRNetworkConfigurationListPage.ets",
+      "buildFunction": "entryNetworkConfigurationListPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "QRCodeModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRQRCodeModePage.ets",
+      "buildFunction": "entryQRCodeModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "SubDeviceModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRSubDeviceModePage.ets",
+      "buildFunction": "entrySubDeviceModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "WiredModePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRWiredModePage.ets",
+      "buildFunction": "entryWiredModePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMDeviceControlPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMDeviceControlPage.ets",
+      "buildFunction": "entryHMDeviceControlPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMCreateFamilyPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMCreateFamilyPage.ets",
+      "buildFunction": "entryHMCreateFamilyPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMFamilyDetailPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMFamilyDetailPage.ets",
+      "buildFunction": "entryHMFamilyDetailPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMFamilyPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMFamilyPage.ets",
+      "buildFunction": "entryHMFamilyPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMHomePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMHomePage.ets",
+      "buildFunction": "entryHMHomePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "LoginPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRLoginPage.ets",
+      "buildFunction": "entryLoginPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "MessageListPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRMessageListPage.ets",
+      "buildFunction": "entryMessageListPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "RegisterPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRRegisterPage.ets",
+      "buildFunction": "entryRegisterPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMSceneDetailPage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMSceneDetailPage.ets",
+      "buildFunction": "entryHMSceneDetailPageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    },
+    {
+      "name": "HMScenePage",
+      "pageSourceFile": "src/main/ets/_generated/ZRHMScenePage.ets",
+      "buildFunction": "entryHMScenePageBuilder",
+      "data": {
+        "needLogin": "false"
+      }
+    }
+  ]
+}
