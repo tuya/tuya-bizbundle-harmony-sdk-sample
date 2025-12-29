@@ -1,92 +1,137 @@
-# tuya_home_sdk_harmony
+# 涂鸦智能 UI 业务包 - HarmonyOS 示例工程
 
+## 环境准备
 
+1. 在[涂鸦开放平台](https://www.tuya.com/)注册账号并创建应用
+2. 获取 `AppKey` 和 `AppSecret`
+3. 下载加密图片 `t_s.bmp`
+4. 获取安全组件 `TSmartSecurity.har`，放到 `entry/src/main/libs/` 目录下
 
-## Getting started
+## 配置步骤
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### 1. 配置应用密钥和加密图片
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+#### 1.1 复制配置模板
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://smartdo-code-cn.tuya-inc.com:7799/harmony/harmonyclient/tuya_home_sdk_harmony.git
-git branch -M master
-git push -uf origin master
+```bash
+cp entry/src/main/ets/config/ThingCustomConfig.template.ets entry/src/main/ets/config/ThingCustomConfig.ets
+cp build-profile.template.json5 build-profile.json5
 ```
 
-## Integrate with your tools
+#### 1.2 填入应用密钥
 
-- [ ] [Set up project integrations](http://smartdo-code-cn.tuya-inc.com/harmony/harmonyclient/tuya_home_sdk_harmony/-/settings/integrations)
+编辑 `entry/src/main/ets/config/ThingCustomConfig.ets`：
 
-## Collaborate with your team
+```typescript
+export class ThingCustomConfig {
+  static readonly APP_KEY = "你的AppKey";
+  static readonly APP_SECRET = "你的AppSecret";
+}
+```
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+#### 1.3 放置加密图片
 
-## Test and Deploy
+将 `t_s.bmp` 文件放到以下目录：
 
-Use the built-in continuous integration in GitLab.
+```
+entry/src/main/resources/rawfile/t_s.bmp
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 2. 配置 OHPM 源
 
-***
+编辑项目根目录的 `.ohpmrc` 文件，添加涂鸦 OHPM 源：
 
-# Editing this README
+```ini
+registry=https://ohpm.openharmony.cn/ohpm/
+strict_ssl=false
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+# 涂鸦 OHPM 源
+@thingsmart:registry=https://ohpm-repo.tuya.com/repos/ohpm
+@rnoh:registry=https://ohpm-repo.tuya.com/repos/ohpm
+@tuya-oh:registry=https://ohpm-repo.tuya.com/repos/ohpm
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+# 认证信息
+//ohpm-repo.tuya.com/repos/ohpm/:_auth="你的认证token"
+```
 
-## Name
-Choose a self-explaining name for your project.
+### 3. 配置 BOM 插件
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+#### 3.1 安装插件
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+将插件包放到 `plugins/` 目录下，然后在 `oh-package.json5` 中添加：
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```json5
+{
+  "devDependencies": {
+    "@tuya-harmony/thingHMBOMPlugin": "file:../plugins/tuya-harmony-thingHMBOMPlugin-1.0.0.tgz"
+  }
+}
+```
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+#### 3.2 引入插件
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+在项目根目录的 `hvigorfile.ts` 中配置：
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```typescript
+import { thingBOMPlugin } from '@tuya-harmony/thingHMBOMPlugin';
+import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+export default {
+    system: appTasks,
+    plugins:[
+        thingBOMPlugin()
+    ]
+}
+```
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### 4. 固定业务包版本
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+编辑 `entry/sdk-requirements.json`，指定所需的业务包版本：
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+```json5
+{
+  "tag": "feature/publish",
+  "versions": {
+    "@thingsmart/userlib": "1.1.18",
+    "@thingsmart/channel": "1.1.62",
+    "@thingsmart/theme": "1.1.4",
+    // ... 其他业务包
+  }
+}
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+根据实际业务需求，从 `sdk-requirements.json` 中选择需要的组件添加到 `entry/thing-biz-components.json`。
 
-## License
-For open source projects, say how it is licensed.
+### 5. 业务组件配置
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+编辑 `entry/thing-biz-components.json`，添加项目使用的业务组件：
+
+```json5
+{
+  "components": {
+    "@thingsmart/userlib": "1.1.18",
+    "@thingsmart/channel": "1.1.62",
+    "@thingsmart/theme": "1.1.4"
+    // ... 根据需要添加
+  }
+}
+```
+
+## 依赖安装
+
+```bash
+ohpm install
+```
+
+## 运行项目
+
+```bash
+# 构建项目
+hvigorw assembleHap
+
+# 或在 DevEco Studio 中直接运行
+```
+
+## SDK 初始化
+
+SDK 初始化代码位于 `entry/src/main/ets/app/AppAbilityStage.ets`，应用启动时会自动完成初始化。

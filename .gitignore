@@ -39,3 +39,4 @@ coverage/
 ./entry/src/main/resources/rawfile/t_s.bmp
 ./build-profile.json5
 /.hvigor
+/.claude

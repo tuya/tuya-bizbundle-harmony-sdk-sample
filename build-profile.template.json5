@@ -1,7 +1,19 @@
 {
   "app": {
     "signingConfigs": [
-
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "PATH_TO_YOUR_CER",
+          "keyAlias": "debugKey",
+          "keyPassword": "YOUR_KEY_PASSWORD",
+          "profile": "PATH_TO_YOUR_P7B",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "PATH_TO_YOUR_P12",
+          "storePassword": "YOUR_STORE_PASSWORD"
+        }
+      }
     ],
     "products": [
       {
