@@ -134,4 +134,23 @@ hvigorw assembleHap
 
 ## SDK 初始化
 
-SDK 初始化代码位于 `entry/src/main/ets/app/AppAbilityStage.ets`，应用启动时会自动完成初始化。
+在 `entry/src/main/ets/app/AppAbilityStage.ets` 中添加：
+
+```typescript
+// 动态反射初始化
+thingDynamicReflect.init(getReflectMetaInfo(`${bundleName}/${moduleName}`));
+
+// Router 初始化
+ThingRouter.initialize()
+ThingRouter.getServiceMgr().setServiceModuleMap(servicesModuleMap());
+
+// 主题初始化
+ThingTheme.getInstance().init(this.context)
+
+// 初始化任务
+const initMetaInfo = thingDynamicReflect.filterMetaInfo(ThingInitializer.DEFAULT_GROUP);
+new ThingInitializer(initMetaInfo).execute(this.context);
+
+// 页面启动流水线
+AppLaunchPipeliner.getInstance().loadPipelineInfo()
+```
