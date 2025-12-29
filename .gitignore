@@ -35,5 +35,7 @@ Thumbs.db
 coverage/
 
 # 敏感配置
-entry/src/main/resources/rawfile/t_s.bmp
+./entry/src/main/ets/config/ThingCustomConfig.ets
+./entry/src/main/resources/rawfile/t_s.bmp
+./build-profile.json5
 /.hvigor
