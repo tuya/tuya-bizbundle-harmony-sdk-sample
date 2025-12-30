@@ -54,7 +54,7 @@ strict_ssl=false
 //ohpm-repo.tuya.com/repos/ohpm/:_auth="你的认证token"
 ```
 
-### 3. 配置 BOM 插件
+### 3. 配置插件
 
 #### 3.1 安装插件
 
@@ -121,15 +121,6 @@ export default {
 
 ```bash
 ohpm install
-```
-
-## 运行项目
-
-```bash
-# 构建项目
-hvigorw assembleHap
-
-# 或在 DevEco Studio 中直接运行
 ```
 
 ## SDK 初始化
