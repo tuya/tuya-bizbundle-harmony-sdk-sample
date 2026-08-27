@@ -47,7 +47,7 @@ export struct HMHomePage {
             HomeActionCell({ title: "Logout" }).onClick(async () => {
               const resp = await TSmartUser.logout()
               if (resp.result) {
-                ZRouter.getInstance().replace("LoginPage")
+                ZRouter.getInstance().replace("DemoLoginPage")
               }
             })
           }

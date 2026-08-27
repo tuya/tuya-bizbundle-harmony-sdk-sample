@@ -121,7 +121,7 @@
       }
     },
     {
-      "name": "LoginPage",
+      "name": "DemoLoginPage",
       "pageSourceFile": "src/main/ets/_generated/ZRLoginPage.ets",
       "buildFunction": "entryLoginPageBuilder",
       "data": {
@@ -137,7 +137,7 @@
       }
     },
     {
-      "name": "RegisterPage",
+      "name": "DemoRegisterPage",
       "pageSourceFile": "src/main/ets/_generated/ZRRegisterPage.ets",
       "buildFunction": "entryRegisterPageBuilder",
       "data": {
