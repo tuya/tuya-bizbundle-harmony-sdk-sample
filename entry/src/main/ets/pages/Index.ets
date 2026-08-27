@@ -32,7 +32,7 @@ struct Index {
           TSmartUser.getUserName()
           ZRouter.getInstance().push("HMHomePage")
         } else {
-          ZRouter.getInstance().push("LoginPage")
+          ZRouter.getInstance().push("DemoLoginPage")
         }
       }).customNavContentTransition(ZRouter.getInstance().animateMgr().getAnimCustomNavContentTransition())
     }

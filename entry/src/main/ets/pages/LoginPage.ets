@@ -2,7 +2,7 @@ import { Route, ZRouter } from "@hzw/zrouter";
 import { window } from "@kit.ArkUI";
 import { TSmartUser, TSmartUserAccountType } from "@thingsmart/userlib";
 
-@Route({ name: 'LoginPage' })
+@Route({ name: 'DemoLoginPage' })
 @Component
 export struct LoginPage {
   @State account: string = ""
@@ -43,7 +43,7 @@ export struct LoginPage {
           })
         Button("Register")
           .onClick(() => {
-            ZRouter.getInstance().push("RegisterPage")
+            ZRouter.getInstance().push("DemoRegisterPage")
           })
       }
       .width("100%")

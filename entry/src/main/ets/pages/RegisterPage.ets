@@ -1,7 +1,7 @@
 import { Route, ZRouter } from "@hzw/zrouter";
 import { TSmartUser, TSmartUserAccountType, TSmartUserAuthCodeType } from "@thingsmart/userlib";
 
-@Route({ name: 'RegisterPage' })
+@Route({ name: 'DemoRegisterPage' })
 @Component
 export struct RegisterPage {
   @State account: string = ""
