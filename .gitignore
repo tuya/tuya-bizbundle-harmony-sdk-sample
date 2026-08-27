@@ -35,8 +35,20 @@ Thumbs.db
 coverage/
 
 # 敏感配置
-./entry/src/main/ets/config/ThingCustomConfig.ets
-./entry/src/main/resources/rawfile/t_s.bmp
-./build-profile.json5
+# 注意：模式前不能加 "./"，git 不会匹配，写了等于没写
+/entry/src/main/ets/config/ThingCustomConfig.ets
+/entry/src/main/resources/rawfile/t_s.bmp
+/build-profile.json5
+
+# 制品仓凭证：包含 registry token，只应存在于本地
+.ohpmrc
+
+# 签名材料
+*.p12
+*.cer
+*.p7b
+*.keystore
+*.mobileprovision
+
 /.hvigor
 /.claude
