@@ -24,6 +24,11 @@
     "@thingsmart/tunihomekit": "3.13.11",
     "@thingsmart/tunip2pkit": "7.5.2",
     "@thingsmart/mapkit": "1.0.17",
-    "@thingsmart/thingpanelmodule": "1.0.30"
+    "@thingsmart/thingpanelmodule": "1.0.30",
+    "@thingsmart/activator_ui": "1.2.9",
+    "@thingsmart/scan": "1.2.18",
+    "@thingsmart/lan": "1.1.0",
+    "@thingsmart/ez": "1.1.0",
+    "@thingsmart/scan_api": "0.0.2"
   }
 }
