@@ -29,6 +29,10 @@
     "@thingsmart/scan": "1.2.18",
     "@thingsmart/lan": "1.1.0",
     "@thingsmart/ez": "1.1.0",
-    "@thingsmart/scan_api": "0.0.2"
+    "@thingsmart/scan_api": "0.0.2",
+    "@thingsmart/share_manage": "10.1.1",
+    "@thingsmart/group": "1.1.15",
+    "@thingsmart/eventsdk": "1.0.2",
+    "@thingsmart/thingrouterscheme": "0.9.1"
   }
 }
