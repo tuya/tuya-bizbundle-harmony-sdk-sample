@@ -36,7 +36,7 @@
     "@thingsmart/thingrouterscheme": "0.9.1",
     "@thingsmart/scan": "1.2.18",
     "@thingsmart/scan_api": "0.0.2",
-    "@thingsmart/godzillapage": "1.12.9",
+    "@thingsmart/godzillapage": "1.12.10",
     "@thingsmart/godzillaservice": "1.12.1",
     "@thingsmart/godzillacore": "1.12.6",
     "@thingsmart/godzillaremoteide": "1.0.4",
@@ -56,7 +56,7 @@
     "@thingsmart/tuniipckit": "7.2.3",
     "@thingsmart/tunimediakit": "3.6.5",
     "@thingsmart/tunihomekit": "3.13.11",
-    "@thingsmart/tunip2pkit": "7.5.2",
+    "@thingsmart/tunip2pkit": "7.9.1",
     "@thingsmart/personal": "1.2.91",
     "@thingsmart/dynamicstring": "1.1.2",
     "@thingsmart/actiondialog": "1.0.20",
@@ -229,7 +229,7 @@
     "@thingsmart/tuniaccessibilitymanager": "1.0.18",
     "@thingsmart/tunidevicenetworkmanager": "1.1.0-wifibackup.7",
     "@thingsmart/tuniminihighwaymanager": "3.4.2",
-    "@thingsmart/tunip2pfilemanager": "7.0.1"
+    "@thingsmart/tunip2pfilemanager": "7.9.1"
   },
   "adviceVersions": {
     "@ohos/liveeventbus": "2.1.2",

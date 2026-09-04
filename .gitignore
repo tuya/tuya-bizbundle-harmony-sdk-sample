@@ -52,3 +52,8 @@ coverage/
 
 /.hvigor
 /.claude
+# 离线打包本地资产与生成物（内部资产，禁止提交）
+entry/thingofflineconfig/
+entry/src/thingres/
+entry/src/thingsrc/
+plugins/*.tgz
