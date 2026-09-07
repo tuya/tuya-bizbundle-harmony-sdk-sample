@@ -43,10 +43,18 @@ export struct HMDeviceControlPage {
       this.deviceListener = {
         onDpsChanged: (devId: string, dps: DpsType, dpsTime: Record<string, Object>) => {
           if (devId === this.deviceId) {
-            this.dps = dps
-            if (this.deviceModel) {
-              this.deviceModel.dps = dps
-            }
+            // onDpsChanged 回调的 dps 是增量数据（只包含本次变化的 DP），必须合并进当前快照，
+            // 不能整体替换；deviceModel 是全局共享实例，其 dps 由 SDK 内部合并维护，
+            // 这里反向赋值会把全量 DP 冲成只剩增量，导致面板等页面读不到其他 DP。
+            // 注意：ArkTS 受限标准库不支持 Object.assign，需逐键合并。
+            const mergedDps: DpsType = {}
+            Object.keys(this.dps).forEach((key: string) => {
+              mergedDps[key] = this.dps[key]
+            })
+            Object.keys(dps).forEach((key: string) => {
+              mergedDps[key] = dps[key]
+            })
+            this.dps = mergedDps
           }
         },
         onOnlineChanged: (devId: string) => {
